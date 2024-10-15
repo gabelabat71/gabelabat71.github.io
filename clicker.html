@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    div {
+      text-align: center;
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Oickle Clicker</title>
+</head>
+
+<body>
+  <div>
+    <img id="jarofpickles" src="https://media.istockphoto.com/id/512805582/photo/jar-of-pickles.jpg?s=612x612&w=0&k=20&c=9ysXmEMGohB7NvlQLHFOwF-65YNvbUPIdD5UR--conQ=">
+    <p id="score">Pikles</p>
+  </div>
+</body>
+
+</html>
+<script>
+  document.getElementById("jarofpickles").addEventListener("click",up)
+  var score = 0
+  function up() {
+    score = score + 1
+    document.getElementById("score").innerHTML = "Pikles = " + score
+    console.log(score)
+  }
+</script>
