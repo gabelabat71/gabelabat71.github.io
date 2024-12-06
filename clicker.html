@@ -16,6 +16,7 @@
   <div>
     <img id="jarofpickles" src="https://media.istockphoto.com/id/512805582/photo/jar-of-pickles.jpg?s=612x612&w=0&k=20&c=9ysXmEMGohB7NvlQLHFOwF-65YNvbUPIdD5UR--conQ=">
     <p id="score">Pikles</p>
+    <Button id="upgrade">Upgrade Cost = 3</Button>
   </div>
 </body>
 
@@ -23,9 +24,24 @@
 <script>
   document.getElementById("jarofpickles").addEventListener("click",up)
   var score = 0
+  var pick = 1
+  var cost = 3
   function up() {
-    score = score + 1
+    score = score + pick
     document.getElementById("score").innerHTML = "Pikles = " + score
     console.log(score)
   }
+  function grade() {
+  if(score >= cost){
+  pick = pick * 2
+  score = score - cost
+  cost = cost + 2
+  document.getElementById("score").innerHTML = "Pikles = " + score
+  document.getElementById("upgrade").innerHTML = "Upgrade Cost = " + cost
+  }
+  else{
+  alert("not enough pickle")
+  }
+    }
+  document.getElementById("upgrade").addEventListener("click",grade)
 </script>

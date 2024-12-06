@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <style>
+        div {
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="movePlease">
+
+    </div>
+</body>
+
+</html>
+<script>
+
+    var leftVariable = 0
+    var direction = 5
+    document.getElementById("movePlease").addEventListener("click", moveBox)
+    setInterval(moveBox, 10)
+    function moveBox() {
+        document.getElementById("movePlease").style.left = 100 + leftVariable + "px";
+        leftVariable = leftVariable + direction
+        if (leftVariable >= 1600) { direction = -5 }
+        if (leftVariable <= 0) { direction = 5 }
+    }
+
+    var up = 0
+    var height = 5
+    document.getElementById("movePlease").addEventListener("click", moveBox)
+    setInterval(moveBoxUp, 10)
+    function moveBoxUp() {
+        document.getElementById("movePlease").style.top = 100 + up + "px";
+        up = up + height
+        if (up >= 600) { height = -5 }
+        if (up <= 0) { height = 5 }
+    }
+
+</script>
